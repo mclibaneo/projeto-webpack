@@ -11,12 +11,11 @@ const headers = new Headers();
 headers.set('Content-Type', 'application/json');
 const body = JSON.stringify(negociacao);
 const method = 'POST';
-const localHost = "http://localhost:3000/";
 const config = { 
     method,
     headers,
     body 
 };
 
-fetch(localHost+'negociacoes', config)
+fetch(`${SERVICE_URL}/negociacoes`, config)
     .then(() => console.log('Dado enviado com sucesso'));

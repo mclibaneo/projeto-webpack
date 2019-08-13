@@ -1,5 +1,8 @@
 import { NegociacaoController } from './controllers/NegociacaoController.js';
 import { Negociacao } from './domain/index.js';
+import 'bootstrap/dist/css/bootstrap.css'; //procura direto direto dentro da pasta modules
+import 'bootstrap/dist/css/bootstrap-theme.css'; //npm le o css como um module
+import '../css/meu-css.css'; //'../' indica para ler na pasta do diretorio raiz
 
 const controller = new NegociacaoController();
 const negociacao = new Negociacao(new Date(), 1, 200);
@@ -13,6 +16,6 @@ const config = {
     headers,
     body 
 };
-localHost = "http://localhost:3000";
-fetch('http://localhost:3000/negociacoes', config)
+localHost = "http://localhost:3000/";
+fetch(localHost+'negociacoes', config)
     .then(() => console.log('Dado enviado com sucesso'));
